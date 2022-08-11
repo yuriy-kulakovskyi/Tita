@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'Akrobat';
+  src: url("./assets/font/akrobat/Akrobat-Bold.otf") format('truetype');
+}
+
+.header {
+  width: 100%;
+  background-color: #1D1D1B;
+  padding-top: 25px;
+
+  .afterWrap {
+    height: 1px;
+    background-color: #333;
+    margin: 20px auto!important;
+  }
+
+  .header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left-part,
+    .right-part {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .left-part {
+      width: 31%;
+    }
+
+    .right-part {
+      width: 50%;
+    }
+
+    .wrap__nav {
+      .menu-toggle {
+        display: none;
+      }
+
+      .primary-navigation {
+        .navigation__menu {
+          list-style-type: none;
+          display: flex;
+
+          .about-item {
+            width: 80px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .menu__item {
+            a {
+              text-decoration: none;
+              font-family: "Akrobat", sans-serif;
+              color: #fff;
+              font-size: 16px;
+              font-weight: 800;
+              display: flex;
+              flex-direction: column-reverse;
+
+              .beforeLine {
+                width: 100%; height: 2px;
+                background-color: #ff3c00;
+                margin-top: 5px;
+                visibility: hidden;
+              }
+            }
+
+            .afterLine {
+              width: 8px; height: 1px;
+              opacity: .5;
+              border: 1px solid #fff;
+              transform: rotate(90deg);
+            }
+
+            .contacts {
+              margin-left: 30px;
+
+              &:hover {
+                .beforeLine {
+                  visibility: visible;
+                }
+              }
+            }
+
+            .about-us {
+              &:hover {
+                .beforeLine {
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .header-phone-number {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .header-city-name {
+        .comment {
+          font-family: "Akrobat", sans-serif;
+          font-weight: 500;
+          font-size: 16px;
+          color: #f6f6f6b0;
+
+          .cityName {
+            font-weight: 800;
+            color: #fcfcfc;
+            margin-left: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .city-phone-number {
+        font-weight: 800;
+        font-size: 32px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+    }
+
+    .header__cart-button {
+      background-color: #fff;
+      color: #E11F1D;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: 800;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 20px 50px;
+      border-radius: 50px;
+      text-decoration: none;
+      cursor: pointer;
+
+      .cart-info {
+        margin-left: 10px;
+      }
+    }
+
+    .wrap__profile {
+      width: 56px; height: 56px;
+      background-color: #fff;
+      border-radius: 100%;
+
+      a {
+        width: 100%; height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .secondary-wrap {
+    .listOfLinks {
+      width: 100%; 
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .link-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+
+        &:hover {
+          .afterLinkLine {
+            visibility: visible;
+          }
+        }
+
+        .afterLinkLine {
+          width: 100%; height: 1px;
+          background-color: #ff3c00;
+          margin-top: 5px;
+          visibility: hidden;
+        }
+
+        .item-link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 24px;
+          font-weight: 700;
+          color: #fff;
+          text-shadow: none;
+
+          .link-img {
+            width: 24px; height: 24px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
