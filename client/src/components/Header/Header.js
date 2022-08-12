@@ -26,11 +26,6 @@ class Header extends React.Component {
             </div>
             {/* Nav buttons */}
             <nav className='wrap__nav'>
-              <button className='menu-toggle'>
-                <span className='close-icon'></span>
-                <span className='menu-icon'></span>
-              </button>
-
               <div className='primary-navigation' id='primary'>
                 <ul className='navigation__menu'>
                   <li className='menu__item about-item'>
@@ -42,7 +37,6 @@ class Header extends React.Component {
                   </li>
                 </ul>
               </div>
-              <div className='handleUp-navigation' id='handleUp'></div>
             </nav>
           </div>
           <div className='right-part'>
@@ -56,6 +50,15 @@ class Header extends React.Component {
               </div>
               <h1 className='city-phone-number' id='phoneNumber'>+38 093 8311 778</h1>
             </div>
+            {/* Menu toggle button */}
+            <button className='menu-toggle'>
+              <span className='close-icon'></span>
+              <span className='menu-icon'>
+                <div className='icon-line'></div>
+                <div className='icon-line'></div>
+                <div className='icon-line'></div>
+              </span>
+            </button>
             {/* Cart button */}
             <a href='#' className='header__cart-button'>
               <i className='cart-img'>
