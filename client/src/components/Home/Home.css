@@ -1,57 +1,50 @@
 .home {
-  width: 100%; min-height: 80vh;
+  width: 100%;
+  min-height: 80vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
-
-  .home__header {
-    width: 100%; height: 28vh;
+  flex-direction: column; }
+  .home .home__header {
+    width: 100%;
+    height: 28vh;
     position: absolute;
     z-index: 999;
     top: 40%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-
-    .home__title {
+    flex-direction: column; }
+    .home .home__header .home__title {
       font-family: "Akrobat";
       text-transform: uppercase;
-      color: rgb(255, 255, 255);
+      color: white;
       text-align: center;
       letter-spacing: 1px;
       font-weight: 400;
-      font-size: 64px;
-    }
-
-    .home__description {
+      font-size: 64px; }
+    .home .home__header .home__description {
       font-family: "Akrobat";
-      color: rgb(255, 255, 255);
+      color: white;
       text-align: center;
       letter-spacing: 1px;
       font-weight: 100;
       font-size: 32px;
-      opacity: .8;
-    }
-
-    .home__btn {
-      background-color: rgb(255, 255, 255);
+      opacity: .8; }
+    .home .home__header .home__btn {
+      background-color: white;
       font-family: "Akrobat", sans-serif;
       text-transform: uppercase;
-      color: rgb(225, 31, 29);
+      color: #e11f1d;
       font-weight: 900;
       font-size: 32px;
       padding: 12px 36px;
       border-radius: 50px;
       cursor: pointer;
       border: none;
-      transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out; }
+      .home .home__header .home__btn:hover {
+        background-color: #1e1d1b;
+        color: #fff; }
 
-      &:hover {
-        background-color: rgba(30, 29, 27, 1);
-        color: #fff;
-      }
-    }
-  }
-}
+/*# sourceMappingURL=Home.css.map */

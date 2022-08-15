@@ -3,8 +3,10 @@
   src: url("./assets/font/akrobat/Akrobat-Bold.otf") format("truetype"); }
 .header {
   width: 100%;
+  max-height: 250px;
   background-color: #1D1D1B;
-  padding-top: 25px; }
+  padding-top: 25px;
+  z-index: 2; }
   .header .afterWrap {
     height: 1px;
     background-color: #333;
@@ -106,6 +108,7 @@
       display: none; }
   .header .secondary-wrap .listOfLinks {
     width: 100%;
+    min-height: 70px;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -152,7 +155,7 @@
         .header .header-wrap .wrap__profile {
           display: none; }
         .header .header-wrap .menu-toggle {
-          display: block !important;
+          display: flex !important;
           background-color: transparent;
           border: none;
           cursor: pointer; }
@@ -168,7 +171,20 @@
               height: 4px;
               background-color: #fff; }
           .header .header-wrap .menu-toggle .close-icon {
-            display: none; }
+            width: 29px;
+            height: 24px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; }
+            .header .header-wrap .menu-toggle .close-icon .icon-line {
+              width: 100%;
+              height: 2px;
+              background-color: #fff; }
+              .header .header-wrap .menu-toggle .close-icon .icon-line:nth-child(1) {
+                transform: rotate(45deg); }
+              .header .header-wrap .menu-toggle .close-icon .icon-line:nth-child(2) {
+                transform: rotate(135deg); }
       .header .secondary-wrap {
         display: none; } }
   @media (max-width: 929px) {

@@ -1,7 +1,33 @@
+// React
 import React from 'react';
+
+// Styles import
 import "./Header.css";
 
+// AOS import and init
+import AOS from 'aos';
+AOS.init();
+
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.status = false;
+    this.ClickFunc = () => {
+      if (!this.status) {
+        document.querySelector(".menu-icon").style.display = 'none';
+        document.querySelector(".close-icon").style.display = 'flex';
+        document.querySelector(".header__menu").style.left = '0';
+        this.status = true;
+      } else if (this.status) {
+        document.querySelector(".menu-icon").style.display = 'flex';
+        document.querySelector(".close-icon").style.display = 'none';
+        document.querySelector(".header__menu").style.left = '-100%';
+        this.status = false;
+      }
+    }
+  }
+
   render() {
     return (
       // Header
@@ -44,21 +70,26 @@ class Header extends React.Component {
             <div className='header-phone-number'>
               <div className='header-city-name'>
                 <h5 className='comment'>Ваше місто: <span className='cityName' id='city'> Самбір <span className='arrow-icon'><svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 4L6 7L9 4L10 5L6 9L2 5L3 4Z" fill="#E11F1D" />
+                  <path fillRule="evenodd" clipRule="evenodd" d="M3 4L6 7L9 4L10 5L6 9L2 5L3 4Z" fill="#E11F1D" />
                 </svg>
                 </span></span></h5>
               </div>
               <h1 className='city-phone-number' id='phoneNumber'>+38 093 8311 778</h1>
             </div>
+
             {/* Menu toggle button */}
-            <button className='menu-toggle'>
-              <span className='close-icon'></span>
+            <button className='menu-toggle' onClick={this.ClickFunc}>
+              <span className='close-icon'>
+                <div className='icon-line'></div>
+                <div className='icon-line'></div>
+              </span>
               <span className='menu-icon'>
                 <div className='icon-line'></div>
                 <div className='icon-line'></div>
                 <div className='icon-line'></div>
               </span>
             </button>
+
             {/* Cart button */}
             <a href='#' className='header__cart-button'>
               <i className='cart-img'>
@@ -130,7 +161,7 @@ class Header extends React.Component {
                 <div className='link-img'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 22 23" fill="none">
                   <g clipPath="url(#clip0)">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8548 9.90038L21.3859 12.2285C21.674 12.4184 21.7536 12.8061 21.5635 13.0942C21.3747 13.3805 20.9878 13.4632 20.6977 13.272L17.7589 11.3343L16.6212 21.6107C16.5863 21.9267 16.3174 22.1668 16.0002 22.1668H6.00032C5.99855 22.1668 5.99674 22.1667 5.99491 22.1666C5.99304 22.1665 5.99114 22.1663 5.98925 22.1663C5.67268 22.1608 5.41341 21.9209 5.37906 21.6107L4.24137 11.3343L1.30257 13.2721C1.01367 13.4626 0.626134 13.3817 0.436844 13.0944C0.24674 12.8061 0.326329 12.4184 0.614578 12.2285L4.1455 9.90038C4.29882 8.5314 5.33951 7.42675 6.67773 7.17789C6.94742 5.72721 8.22249 4.62532 9.75016 4.62532H11.1686L11.6313 1.37076C11.68 1.02896 11.9967 0.791335 12.3382 0.84C12.6798 0.888503 12.9175 1.20491 12.869 1.54671L12.4305 4.63118C13.1994 4.67512 13.8945 4.99837 14.4162 5.50081L15.4069 2.51204C15.5155 2.1844 15.8693 2.00699 16.1968 2.11555C16.5244 2.22411 16.702 2.57779 16.5934 2.90543L15.2629 6.91943C15.2863 7.00422 15.3063 7.09032 15.3226 7.17789C16.661 7.42675 17.7015 8.5314 17.8548 9.90038ZM13.942 18.5999L15.5221 20.18L16.1777 14.2572L16.6668 10.8334H11.0002H5.3335L5.82278 14.2583L6.47835 20.18L8.05826 18.5999C8.17545 18.4827 8.33447 18.417 8.50016 18.417H13.5002C13.6658 18.417 13.8249 18.4827 13.942 18.5999ZM7.50911 20.917H14.4912L13.2412 19.667H8.75911L7.50911 20.917ZM14.3657 9.62532H16.5181C16.2632 8.90673 15.5819 8.3885 14.7799 8.37597L14.3657 9.62532ZM13.0488 9.62532L13.9398 6.93782C13.6369 6.31054 12.9949 5.87678 12.2534 5.87548L11.7204 9.62532H13.0488ZM8.50016 8.37532H7.25016C6.43538 8.37532 5.74023 8.89778 5.48225 9.62532H10.4578L10.9909 5.87532H9.75016C8.93538 5.87532 8.24072 6.39794 7.98274 7.12532H8.50016C8.84537 7.12532 9.12516 7.4051 9.12516 7.75032C9.12516 8.09553 8.84537 8.37532 8.50016 8.37532Z" fill="white"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M17.8548 9.90038L21.3859 12.2285C21.674 12.4184 21.7536 12.8061 21.5635 13.0942C21.3747 13.3805 20.9878 13.4632 20.6977 13.272L17.7589 11.3343L16.6212 21.6107C16.5863 21.9267 16.3174 22.1668 16.0002 22.1668H6.00032C5.99855 22.1668 5.99674 22.1667 5.99491 22.1666C5.99304 22.1665 5.99114 22.1663 5.98925 22.1663C5.67268 22.1608 5.41341 21.9209 5.37906 21.6107L4.24137 11.3343L1.30257 13.2721C1.01367 13.4626 0.626134 13.3817 0.436844 13.0944C0.24674 12.8061 0.326329 12.4184 0.614578 12.2285L4.1455 9.90038C4.29882 8.5314 5.33951 7.42675 6.67773 7.17789C6.94742 5.72721 8.22249 4.62532 9.75016 4.62532H11.1686L11.6313 1.37076C11.68 1.02896 11.9967 0.791335 12.3382 0.84C12.6798 0.888503 12.9175 1.20491 12.869 1.54671L12.4305 4.63118C13.1994 4.67512 13.8945 4.99837 14.4162 5.50081L15.4069 2.51204C15.5155 2.1844 15.8693 2.00699 16.1968 2.11555C16.5244 2.22411 16.702 2.57779 16.5934 2.90543L15.2629 6.91943C15.2863 7.00422 15.3063 7.09032 15.3226 7.17789C16.661 7.42675 17.7015 8.5314 17.8548 9.90038ZM13.942 18.5999L15.5221 20.18L16.1777 14.2572L16.6668 10.8334H11.0002H5.3335L5.82278 14.2583L6.47835 20.18L8.05826 18.5999C8.17545 18.4827 8.33447 18.417 8.50016 18.417H13.5002C13.6658 18.417 13.8249 18.4827 13.942 18.5999ZM7.50911 20.917H14.4912L13.2412 19.667H8.75911L7.50911 20.917ZM14.3657 9.62532H16.5181C16.2632 8.90673 15.5819 8.3885 14.7799 8.37597L14.3657 9.62532ZM13.0488 9.62532L13.9398 6.93782C13.6369 6.31054 12.9949 5.87678 12.2534 5.87548L11.7204 9.62532H13.0488ZM8.50016 8.37532H7.25016C6.43538 8.37532 5.74023 8.89778 5.48225 9.62532H10.4578L10.9909 5.87532H9.75016C8.93538 5.87532 8.24072 6.39794 7.98274 7.12532H8.50016C8.84537 7.12532 9.12516 7.4051 9.12516 7.75032C9.12516 8.09553 8.84537 8.37532 8.50016 8.37532Z" fill="white"/>
                   </g>
                   <defs>
                   <clipPath id="clip0">
