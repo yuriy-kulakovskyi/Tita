@@ -105,5 +105,24 @@
             font-style: thin;
             font-size: 16px;
             color: #4f4f4f; }
+  @media (max-width: 992px) {
+    .about .row {
+      padding-left: 20px; }
+      .about .row .about__left {
+        display: none; }
+    .about .about__footer .footer__row {
+      flex-direction: column; }
+      .about .about__footer .footer__row .footer__row-item {
+        margin-top: 30px;
+        width: 100%;
+        max-height: 31%;
+        max-width: none; } }
+  @media (max-width: 716px) {
+    .about .about__footer {
+      width: 90%; }
+      .about .about__footer .col-title {
+        font-size: 18px !important; }
+      .about .about__footer .col-paragraph {
+        font-size: 12px !important; } }
 
 /*# sourceMappingURL=About.css.map */

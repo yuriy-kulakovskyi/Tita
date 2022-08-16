@@ -139,4 +139,41 @@
       }
     }
   }
+
+  // Media queries
+  @media (max-width: 992px) {
+    .row {
+      padding-left: 20px;
+
+      .about__left {
+        display: none;
+      }
+    }
+
+    .about__footer {
+      .footer__row {
+        flex-direction: column;
+
+        .footer__row-item {
+          margin-top: 30px;
+          width: 100%; max-height: 31%;
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 716px) {
+    .about__footer {
+      width: 90%;
+
+      .col-title {
+        font-size: 18px!important;
+      }
+
+      .col-paragraph {
+        font-size: 12px!important;
+      }
+    }
+  }
 }
