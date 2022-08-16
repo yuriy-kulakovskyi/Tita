@@ -46,5 +46,46 @@
       .home .home__header .home__btn:hover {
         background-color: #1e1d1b;
         color: #fff; }
+  @media (max-width: 808px) {
+    .home .home__header {
+      top: 20%;
+      height: 17vh; }
+      .home .home__header .home__title {
+        font-size: 32px; }
+      .home .home__header .home__description {
+        font-size: 16px; } }
+  @media (max-width: 433px) {
+    .home .home__header {
+      height: 20vh; }
+      .home .home__header .home__title {
+        font-size: 30px; }
+      .home .home__header .home__description {
+        font-size: 13px; } }
+  @media (max-width: 367px) {
+    .home .home__header {
+      height: 17vh; }
+      .home .home__header .home__title {
+        font-size: 25px; }
+      .home .home__header .home__description {
+        font-size: 12px; }
+      .home .home__header .home__btn {
+        font-size: 25px;
+        padding: 12px 18px; } }
+  @media (max-width: 281px) {
+    .home .home__header {
+      height: 25vh; }
+      .home .home__header .home__title {
+        font-size: 20px; }
+      .home .home__header .home__btn {
+        font-size: 20px;
+        padding: 10px 15px; } }
+  @media (max-height: 658px) {
+    .home .home__header {
+      height: 40vh;
+      top: 20%; } }
+  @media (max-height: 453px) {
+    .home .home__header {
+      height: 50vh;
+      top: 25%; } }
 
 /*# sourceMappingURL=Home.css.map */
