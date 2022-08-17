@@ -113,7 +113,10 @@
       .about .row .about__left {
         display: none; }
       .about .row .about__right {
-        width: 100%; }
+        width: 100%;
+        padding-right: 30px; }
+        .about .row .about__right .description__list-wrapper {
+          margin: 0 auto 30px; }
     .about .about__footer .footer__row {
       flex-direction: column; }
       .about .about__footer .footer__row .footer__row-item {
