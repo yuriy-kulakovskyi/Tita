@@ -95,6 +95,10 @@
           margin-right: 10px;
         }
       }
+      
+      .first-btn {
+        display: none;
+      }
     }
   }
 
@@ -148,6 +152,10 @@
       .about__left {
         display: none;
       }
+
+      .about__right {
+        width: 100%;
+      }
     }
 
     .about__footer {
@@ -164,6 +172,21 @@
   }
 
   @media (max-width: 716px) {
+    .row {
+      .about__right {
+        .first-btn {
+          display: inline-flex;
+          position: relative;
+          top: -120px; left: 16%;
+          z-index: 3;
+        }
+        
+        .second-btn {
+          display: none;
+        }
+      }
+    }
+
     .about__footer {
       width: 90%;
 

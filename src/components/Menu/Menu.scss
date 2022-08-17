@@ -1,12 +1,152 @@
 .header__menu {
-  width: 100%; height: 100vh;
+  width: 100%; min-height: 100vh; max-height: 1750px;
   position: absolute;
-  background-color: #000;
+  background-color: #1D1D1B;
   color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  z-index: 1;
+  flex-direction: column;
+  z-index: 999;
   left: -100%;
   transition: all .6s ease-in-out;
+
+  .menu__header {
+    width: 100%;
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__auth-btn {
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 19px;
+      font-family: 'Akrobat', sans-serif;
+      padding: 21px 40px;
+      background: #e11f1d;
+      border-radius: 49px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+    }
+    
+    .close-icon {
+      width: 29px; height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .icon-line {
+        width: 100%; height: 2px;
+        background-color: #fff;
+
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: rotate(135deg);
+        }
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: #333;
+      height: 1px; width: 90%;
+      top: 104px; left: 5%;
+    }
+  }
+
+  .menu__nav {
+    width: 90%; min-height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .listOfLinks {
+      list-style-type: none;
+      width: 100%;
+      min-height: 80vh; max-height: 90vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      .link-item {
+        width: 100%;
+        
+        .item-link {
+          display: flex;
+          text-decoration: none;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 24px;
+
+          svg {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .menu__links {
+    width: 90%;
+    padding: 20px 0;
+    border-top: 1px solid #666; 
+    border-bottom: 1px solid #666; 
+
+    .links__item {
+      color: #fff;
+      font-size: 16px;
+      font-family: Akrobat;
+      font-weight: 400;
+      text-decoration: none;
+      margin-left: 24px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0; height: 8px;
+        border: 1px solid #fff;
+        background-color: #fff;
+        opacity: .7;
+        margin-left: 10px; margin-top: 5px;
+      }
+    }
+
+    .last {
+      &::after {
+        content: '';
+        display: none;
+      }
+    }
+  }
+
+  .menu__info {
+    padding: 70px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .info__paragraph {
+      color: rgba(255, 255, 255, .7);
+
+      .city-name {
+        color: #fff;
+      }
+    }
+
+    .info__phone-number {
+      color: #fff;
+      font-size: 32px;
+    }
+  }
 }

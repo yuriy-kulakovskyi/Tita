@@ -252,27 +252,6 @@
             background-color: #fff;
           }
         }
-  
-        .close-icon {
-          width: 29px; height: 24px;
-          display: none;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-  
-          .icon-line {
-            width: 100%; height: 2px;
-            background-color: #fff;
-
-            &:nth-child(1) {
-              transform: rotate(45deg);
-            }
-
-            &:nth-child(2) {
-              transform: rotate(135deg);
-            }
-          }
-        }
       }
     }
     

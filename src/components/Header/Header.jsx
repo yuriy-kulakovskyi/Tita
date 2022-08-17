@@ -4,27 +4,15 @@ import React from 'react';
 // Styles import
 import "./Header.css";
 
-// AOS import and init
-import AOS from 'aos';
-AOS.init();
-
 class Header extends React.Component {
   constructor(props) {
     super(props);
 
-    this.status = false;
     this.ClickFunc = () => {
-      if (!this.status) {
-        document.querySelector(".menu-icon").style.display = 'none';
-        document.querySelector(".close-icon").style.display = 'flex';
-        document.querySelector(".header__menu").style.left = '0';
-        this.status = true;
-      } else if (this.status) {
-        document.querySelector(".menu-icon").style.display = 'flex';
-        document.querySelector(".close-icon").style.display = 'none';
-        document.querySelector(".header__menu").style.left = '-100%';
-        this.status = false;
-      }
+      document.querySelector("section").style.display = 'none';
+      document.querySelector(".about").style.display = 'none';
+      document.querySelector("footer").style.display = 'none';
+      document.querySelector(".header__menu").style.left = '0';
     }
   }
 
@@ -79,10 +67,6 @@ class Header extends React.Component {
 
             {/* Menu toggle button */}
             <button className='menu-toggle' onClick={this.ClickFunc}>
-              <span className='close-icon'>
-                <div className='icon-line'></div>
-                <div className='icon-line'></div>
-              </span>
               <span className='menu-icon'>
                 <div className='icon-line'></div>
                 <div className='icon-line'></div>
