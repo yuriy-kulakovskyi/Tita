@@ -170,21 +170,6 @@
               width: 100%;
               height: 4px;
               background-color: #fff; }
-          .header .header-wrap .menu-toggle .close-icon {
-            width: 29px;
-            height: 24px;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column; }
-            .header .header-wrap .menu-toggle .close-icon .icon-line {
-              width: 100%;
-              height: 2px;
-              background-color: #fff; }
-              .header .header-wrap .menu-toggle .close-icon .icon-line:nth-child(1) {
-                transform: rotate(45deg); }
-              .header .header-wrap .menu-toggle .close-icon .icon-line:nth-child(2) {
-                transform: rotate(135deg); }
       .header .secondary-wrap {
         display: none; } }
   @media (max-width: 929px) {

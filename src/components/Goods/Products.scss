@@ -1,0 +1,11 @@
+.products-page {
+  width: 100%; min-height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .hero {
+    width: 100%;
+  }
+}

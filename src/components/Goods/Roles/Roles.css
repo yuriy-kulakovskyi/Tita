@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Akrobat-Black';
+  src: url("./assets/font/akrobat/Akrobat-Black.otf") format("truetype"); }
+@font-face {
+  font-family: 'Akrobat-LightExtra';
+  src: url("./assets/font/akrobat/Akrobat-ExtraLight.otf") format("truetype"); }
+.roles {
+  width: 100%;
+  min-height: 10vh;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column; }
+  .roles .roles-wrap {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .roles .roles-wrap .roles-wrap__row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element {
+        width: 50%;
+        min-height: 150px;
+        max-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border-top: 1px solid #f6f6f6;
+        padding: 30px 30px; }
+        .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .afterLine {
+          width: 4px;
+          height: 150px;
+          background-color: #f6f6f6;
+          margin: auto 0; }
+        .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__image {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__image .image {
+            width: 100%;
+            height: 100%; }
+        .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__title {
+          font-family: "Akrobat-Black", sans-serif;
+          font-weight: 900;
+          font-size: 16px;
+          color: #000;
+          text-decoration: none;
+          margin-top: 10px; }
+        .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__good__weight,
+        .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__paragraph {
+          font-family: "Akrobat-LightExtra", sans-serif;
+          margin-top: 10px; }
+        .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__good__weight {
+          font-weight: 200; }
+        .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__buy-row {
+          margin-top: 10px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 20px; }
+          .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__buy-row .row__cart {
+            background-color: #E11F1D;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 49px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer; }
+          .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__buy-row .row__select-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; }
+            .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__buy-row .row__select-number .selection__button {
+              width: 15px;
+              height: 15px;
+              border-radius: 100%;
+              border: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              align-items: flex-end;
+              color: #E11F1D;
+              cursor: pointer; }
+            .roles .roles-wrap .roles-wrap__row .roles-wrap__row__element .element__info .info__buy-row .row__select-number .selection__number {
+              font-weight: 800;
+              font-size: 16px;
+              text-align: center;
+              text-transform: uppercase;
+              font-family: 'Akrobat-Black', sans-serif;
+              color: #1D1D1B; }
+
+/*# sourceMappingURL=Roles.css.map */

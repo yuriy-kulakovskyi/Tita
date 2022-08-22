@@ -5,10 +5,13 @@ class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.Click = () => {
-      document.querySelector("section").style.display = 'flex';
-      document.querySelector(".about").style.display = 'flex';
-      document.querySelector("footer").style.display = 'flex';
       document.querySelector(".header__menu").style.left = '-100%';
+
+      setTimeout(() => {
+        document.querySelector("section").style.display = 'flex';
+        document.querySelector(".header").style.display = 'block';
+        document.querySelector("footer").style.display = 'flex';
+      }, 400)
     }
   }
 

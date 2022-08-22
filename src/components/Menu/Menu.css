@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  z-index: 999;
+  z-index: 1001;
   left: -100%;
   transition: all .6s ease-in-out; }
   .header__menu .menu__header {
@@ -35,7 +35,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column; }
+      flex-direction: column;
+      cursor: pointer; }
       .header__menu .menu__header .close-icon .icon-line {
         width: 100%;
         height: 2px;
