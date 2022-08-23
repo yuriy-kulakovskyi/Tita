@@ -1,6 +1,8 @@
 // Main links
 import React from 'react';
 import './App.css';
+import { useState } from 'react';
+
 
 // Components
 import About from './components/About/About';
@@ -10,35 +12,30 @@ import Home from './components/Home/Home';
 import Menu from './components/Menu/Menu';
 import Products from './components/Goods/Products';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.pageStyles = React.createRef();
-    this.products = React.createRef();
-  }
 
-  switchSection = props => {
-    if (props.target.innerText.toLowerCase() === 'роли та суші') {
-      this.pageStyles.current.style.display = 'none';
-      this.products.current.style.display = 'flex';
-    }
-  }
+function App () {
+  const pageStyles = React.createRef();
+  const products = React.createRef();
+  const [price, updatePrice] = useState(0);
 
-  render() {
-    return (
-      <div className="App">
-        <div className='mainPage' ref={this.pageStyles}>
-          <Header 
-          switchSectionFunction = {this.switchSection} />
-          <Menu />
-          <Home />
-          <About />
-          <Footer />
-        </div>
-        <Products refSend={this.products} />
+  return (
+    <div className="App">
+      <Menu />
+      <Header 
+        pageStyles = {pageStyles}
+        products = {products}
+        price = {price} />
+      <div className='mainPage' ref={pageStyles}>
+        <Home />
+        <About />
       </div>
-    );
-  }
+      <Products 
+      refSend={products}
+      price = {price}
+      updatePrice = {updatePrice} />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

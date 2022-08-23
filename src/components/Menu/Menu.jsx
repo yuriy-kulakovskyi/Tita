@@ -9,6 +9,7 @@ class Menu extends React.Component {
 
       setTimeout(() => {
         document.querySelector("section").style.display = 'flex';
+        document.querySelector(".about").style.display = 'block';
         document.querySelector(".header").style.display = 'block';
         document.querySelector("footer").style.display = 'flex';
       }, 400)
