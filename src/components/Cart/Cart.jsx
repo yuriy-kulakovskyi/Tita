@@ -70,10 +70,7 @@ const Cart = (componentProps) => {
         fullPrice -= parseInt(item.price);
         document.querySelector(".cart-info").innerText = 'Корзина ₴' + parseFloat(fullPrice).toFixed(2);
         componentProps.updatePrice(parseInt(fullPrice));
-
-        setTimeout(() => {
-          products.splice(item, 1);
-        }, 200);
+        products.splice(item, 1);
 
         if (fullPrice <= 0) {
           alertsBlock.current.style.display = 'flex';
