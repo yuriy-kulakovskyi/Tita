@@ -65,16 +65,17 @@ const Cart = (componentProps) => {
     let pathToTitle = props.nativeEvent.path[1].lastChild.lastChild.children[0].innerText.substr(0, props.nativeEvent.path[1].lastChild.children[1].firstChild.childNodes[0].length);
 
     for (let item of products) {
-      console.log(pathToBlock);
       if (item.title === pathToTitle) {
+        pathToBlock.style.display = 'none';
         fullPrice -= parseInt(item.price);
-        console.log(fullPrice);
         document.querySelector(".cart-info").innerText = 'Корзина ₴' + parseFloat(fullPrice).toFixed(2);
         componentProps.updatePrice(parseInt(fullPrice));
-        pathToBlock.style.display = 'none';
-        products.splice(item, 1);
 
-        if (products.length <= 0) {
+        setTimeout(() => {
+          products.splice(item, 1);
+        }, 200);
+
+        if (fullPrice <= 0) {
           alertsBlock.current.style.display = 'flex';
           accessedBlock.current.style.display = 'none';
         }
