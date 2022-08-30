@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Akrobat';
+  font-family: 'Akrobat-Bold';
   src: url("./assets/font/akrobat/Akrobat-Bold.otf") format('truetype');
 }
 
@@ -52,7 +52,7 @@
           .menu__item {
             a {
               text-decoration: none;
-              font-family: "Akrobat", sans-serif;
+              font-family: "Akrobat-Bold";
               color: #fff;
               font-size: 16px;
               font-weight: 800;
@@ -103,8 +103,7 @@
 
       .header-city-name {
         .comment {
-          font-family: "Akrobat", sans-serif;
-          font-weight: 500;
+          font-family: "Akrobat-Bold";
           font-size: 16px;
           color: #f6f6f6b0;
 
@@ -122,12 +121,14 @@
         font-size: 32px;
         text-transform: uppercase;
         color: #fff;
+        font-family: "Akrobat-Bold";
       }
     }
 
     .header__cart-button {
       background-color: #fff;
       color: #E11F1D;
+      border: none;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -139,6 +140,7 @@
       border-radius: 50px;
       text-decoration: none;
       cursor: pointer;
+      font-family: "Akrobat-Bold";
 
       .cart-info {
         margin-left: 10px;

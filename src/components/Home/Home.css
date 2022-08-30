@@ -1,3 +1,6 @@
+@font-face {
+  font-family: "Akrobat-Bold";
+  src: url("./assets/font/akrobat/Akrobat-Bold.otf"); }
 .home {
   width: 100%;
   min-height: 80vh;
@@ -16,7 +19,7 @@
     align-items: center;
     flex-direction: column; }
     .home .home__header .home__title {
-      font-family: "Akrobat";
+      font-family: "Akrobat-Bold";
       text-transform: uppercase;
       color: white;
       text-align: center;
@@ -24,7 +27,7 @@
       font-weight: 400;
       font-size: 64px; }
     .home .home__header .home__description {
-      font-family: "Akrobat";
+      font-family: "Akrobat-Bold";
       color: white;
       text-align: center;
       letter-spacing: 1px;
@@ -33,7 +36,7 @@
       opacity: .8; }
     .home .home__header .home__btn {
       background-color: white;
-      font-family: "Akrobat", sans-serif;
+      font-family: "Akrobat-Bold";
       text-transform: uppercase;
       color: #e11f1d;
       font-weight: 900;

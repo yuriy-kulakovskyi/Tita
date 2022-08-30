@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Akrobat';
+  font-family: 'Akrobat-Bold';
   src: url("./assets/font/akrobat/Akrobat-Bold.otf") format("truetype"); }
 .header {
   width: 100%;
@@ -34,7 +34,7 @@
         align-items: center; }
       .header .header-wrap .wrap__nav .primary-navigation .navigation__menu .menu__item a {
         text-decoration: none;
-        font-family: "Akrobat", sans-serif;
+        font-family: "Akrobat-Bold";
         color: #fff;
         font-size: 16px;
         font-weight: 800;
@@ -63,8 +63,7 @@
       flex-direction: column;
       align-items: flex-end; }
       .header .header-wrap .header-phone-number .header-city-name .comment {
-        font-family: "Akrobat", sans-serif;
-        font-weight: 500;
+        font-family: "Akrobat-Bold";
         font-size: 16px;
         color: #f6f6f6b0; }
         .header .header-wrap .header-phone-number .header-city-name .comment .cityName {
@@ -76,10 +75,12 @@
         font-weight: 800;
         font-size: 32px;
         text-transform: uppercase;
-        color: #fff; }
+        color: #fff;
+        font-family: "Akrobat-Bold"; }
     .header .header-wrap .header__cart-button {
       background-color: #fff;
       color: #E11F1D;
+      border: none;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -90,7 +91,8 @@
       padding: 20px 50px;
       border-radius: 50px;
       text-decoration: none;
-      cursor: pointer; }
+      cursor: pointer;
+      font-family: "Akrobat-Bold"; }
       .header .header-wrap .header__cart-button .cart-info {
         margin-left: 10px; }
     .header .header-wrap .wrap__profile {

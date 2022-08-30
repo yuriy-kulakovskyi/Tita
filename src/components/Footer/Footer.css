@@ -1,3 +1,6 @@
+@font-face {
+  font-family: "Akrobat-Bold";
+  src: url("./assets/font/akrobat/Akrobat-Bold.otf"); }
 .footer {
   width: 100%;
   padding: 45px 0;
@@ -20,10 +23,9 @@
         margin-top: 20px; }
         .footer .row .footer__left .nav__links .links__link-wrapper .wrapper__link {
           text-decoration: none;
-          font-family: Akrobat;
-          font-weight: 800;
           font-size: 16px;
           color: #fff;
+          font-family: "Akrobat-Bold";
           display: flex;
           flex-direction: column-reverse; }
           .footer .row .footer__left .nav__links .links__link-wrapper .wrapper__link .last::after {

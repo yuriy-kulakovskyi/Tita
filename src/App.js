@@ -11,6 +11,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Menu from './components/Menu/Menu';
 import Products from './components/Goods/Products';
+import Cart from './components/Cart/Cart';
 
 
 function App () {
@@ -20,19 +21,30 @@ function App () {
 
   return (
     <div className="App">
-      <Menu />
+      <Menu
+        pageStyles = {pageStyles}
+        products = {products} />
+
       <Header 
         pageStyles = {pageStyles}
         products = {products}
         price = {price} />
+
       <div className='mainPage' ref={pageStyles}>
         <Home />
         <About />
       </div>
+
       <Products 
-      refSend={products}
-      price = {price}
-      updatePrice = {updatePrice} />
+        refSend={products}
+        price = {price}
+        updatePrice = {updatePrice}
+        className="products-page" />
+
+      <Cart
+        className='cart-page'
+        updatePrice = {updatePrice} />
+
       <Footer />
     </div>
   );
