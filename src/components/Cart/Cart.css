@@ -95,7 +95,8 @@
           font-size: 20px;
           border-bottom-left-radius: 2px;
           border-top-left-radius: 2px;
-          margin-left: 20px; }
+          margin-left: 20px;
+          font-family: "Akrobat"; }
       .cart .cart-wrap .alerts .bin-alert {
         display: none; }
       .cart .cart-wrap .alerts .cart-alert {
