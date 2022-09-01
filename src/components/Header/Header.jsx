@@ -27,9 +27,7 @@ const Header = props => {
     }
   }
 
-  const toHome = () => {
-    document.location.reload();
-  }
+  const toHome = () => document.location.reload();
 
   const toCartSection = () => {
     document.querySelector(".mainPage").style.display = 'none';
