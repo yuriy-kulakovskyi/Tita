@@ -1,7 +1,7 @@
-import { React, useRef, useEffect } from 'react';
+import { React, useRef } from 'react';
 import './Cart.css';
 
-const Cart = (componentProps) => {  
+const Cart = componentProps => {  
   const emptyCartAlert = useRef();
   const accessedBlock = useRef();
   const alertsBlock = useRef();
@@ -10,16 +10,14 @@ const Cart = (componentProps) => {
   let products = JSON.parse(localStorage.getItem("products")) || [];
   let fullPrice = parseInt(localStorage.getItem("fullPrice")) || 0;
 
-  useEffect(() => {
-    for (let i = 0; i < products.length; i++) {
-      for (let j = 0; j < products.length - 1; j++) {
-        if (products[j + 1].title === products[j].title) {
-          products[j].amount += products[j + 1].amount;
-          products.splice(j + 1);
-        }
+  for (let i = 0; i < products.length; i++) {
+    for (let j = 0; j < products.length - 1; j++) {
+      if (products[j + 1].title === products[j].title) {
+        products[j].amount += products[j + 1].amount;
+        products.splice(j + 1);
       }
     }
-  });
+  }
 
   const minusClick = props => {
     let titleOfBlock = props.nativeEvent.path[3].firstChild.children[1].children[1].firstChild.innerText.substr(0, props.nativeEvent.path[3].firstChild.children[1].lastChild.firstChild.childNodes[0].length);
@@ -61,8 +59,8 @@ const Cart = (componentProps) => {
 
   const crossClick = props => {
 
-    let pathToBlock = props.nativeEvent.path[2];
-    let pathToTitle = props.nativeEvent.path[1].lastChild.lastChild.children[0].innerText.substr(0, props.nativeEvent.path[1].lastChild.children[1].firstChild.childNodes[0].length);
+    const pathToBlock = props.nativeEvent.path[2];
+    const pathToTitle = props.nativeEvent.path[1].lastChild.lastChild.children[0].innerText.substr(0, props.nativeEvent.path[1].lastChild.children[1].firstChild.childNodes[0].length);
 
     for (let item of products) {
       if (item.title === pathToTitle) {
@@ -70,7 +68,11 @@ const Cart = (componentProps) => {
         fullPrice -= parseInt(item.price);
         document.querySelector(".cart-info").innerText = 'Корзина ₴' + parseFloat(fullPrice).toFixed(2);
         componentProps.updatePrice(parseInt(fullPrice));
-        products.splice(item, 1);
+        products.splice(products.indexOf(item), 1);
+        document.location.reload();
+
+        localStorage.setItem("fullPrice", fullPrice);
+        localStorage.setItem("products", JSON.stringify(products));
 
         if (fullPrice <= 0) {
           alertsBlock.current.style.display = 'flex';
@@ -78,8 +80,6 @@ const Cart = (componentProps) => {
         }
       }
     }
-    localStorage.setItem("products", JSON.stringify(products));
-    localStorage.setItem("fullPrice", fullPrice);
   }
 
   const stepClick = eventProps => {
