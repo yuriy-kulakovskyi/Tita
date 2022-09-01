@@ -180,9 +180,11 @@
     .row {
       .about__right {
         .first-btn {
+          width: 100%;
           display: inline-flex;
+          justify-content: center;
           position: relative;
-          top: -120px; left: 28%;
+          top: -120px; left: 3%;
           z-index: 3;
         }
         
