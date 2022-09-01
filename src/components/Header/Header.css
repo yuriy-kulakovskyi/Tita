@@ -22,6 +22,8 @@
       align-items: center; }
     .header .header-wrap .left-part {
       width: 31%; }
+      .header .header-wrap .left-part .wrap__site-branding {
+        cursor: pointer; }
     .header .header-wrap .right-part {
       width: 50%; }
     .header .header-wrap .wrap__nav .primary-navigation .navigation__menu {
