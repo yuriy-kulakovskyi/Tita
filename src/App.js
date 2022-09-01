@@ -12,12 +12,20 @@ import Home from './components/Home/Home';
 import Menu from './components/Menu/Menu';
 import Products from './components/Goods/Products';
 import Cart from './components/Cart/Cart';
+import CartButton from './components/Cart-btn/CartBtn';
 
 
 function App () {
   const pageStyles = React.createRef();
   const products = React.createRef();
   const [price, updatePrice] = useState(0);
+
+  let pageState;
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    pageState = 'mobile';
+  }else{
+    pageState = 'not mobile';
+  }
 
   return (
     <div className="App">
@@ -46,6 +54,10 @@ function App () {
         updatePrice = {updatePrice} />
 
       <Footer />
+
+      <CartButton
+        pageState = {pageState}
+      />
     </div>
   );
 }

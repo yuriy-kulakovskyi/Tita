@@ -1,0 +1,22 @@
+.cartBtn {
+  padding: 10px 10px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #e11f1d;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #e11f1d;
+  text-shadow: 0 0 3px #fff;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; }
+  .cartBtn .cart-img svg {
+    filter: drop-shadow(0 0 3px #fff); }
+
+/*# sourceMappingURL=CartBtn.css.map */
