@@ -32,9 +32,10 @@ const Cart = componentProps => {
         document.querySelector(".details").style.display = 'flex';
       } else {
         localStorage.setItem("page", "cart");
+        document.location.reload();
         details.current.lastElementChild.style.backgroundColor = 'transparent';
         details.current.lastElementChild.style.color = '#000';
-        document.querySelector(".details").style.display = 'none';
+        document.querySelector(".alerts").style.display = 'flex';
       }
     } else {
       details.current.lastElementChild.style.backgroundColor = 'transparent';
