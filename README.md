@@ -5,4 +5,7 @@ React application created for sushi store "Tita". An excellent experience with R
  •scss•
  •media queries•
  •jsx•
+ •hooks•
+ •props•
+ •refs•
 ```
