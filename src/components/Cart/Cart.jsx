@@ -26,9 +26,16 @@ const Cart = componentProps => {
         document.querySelector(".accessed").style.display = 'none';
       }
     } else if (localStorage.getItem("page") === 'details') {
-      details.current.lastElementChild.style.backgroundColor = '#e11f1d';
-      details.current.lastElementChild.style.color = '#fff';
-      document.querySelector(".details").style.display = 'flex';
+      if (products.length > 0) {
+        details.current.lastElementChild.style.backgroundColor = '#e11f1d';
+        details.current.lastElementChild.style.color = '#fff';
+        document.querySelector(".details").style.display = 'flex';
+      } else {
+        localStorage.setItem("page", "cart");
+        details.current.lastElementChild.style.backgroundColor = 'transparent';
+        details.current.lastElementChild.style.color = '#000';
+        document.querySelector(".details").style.display = 'none';
+      }
     } else {
       details.current.lastElementChild.style.backgroundColor = 'transparent';
       details.current.lastElementChild.style.color = '#000';
