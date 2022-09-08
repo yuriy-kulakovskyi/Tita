@@ -52,7 +52,7 @@ function App () {
       <Cart
         className='cart-page'
         updatePrice = {updatePrice} />
-
+      
       <Footer />
 
       <CartButton

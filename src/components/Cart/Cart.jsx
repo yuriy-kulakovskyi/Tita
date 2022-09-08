@@ -1,14 +1,39 @@
-import { React, useRef } from 'react';
+import { React, useRef, useEffect } from 'react';
 import './Cart.css';
+import Details from './Details/Details';
 
 const Cart = componentProps => {  
   const emptyCartAlert = useRef();
   const accessedBlock = useRef();
   const alertsBlock = useRef();
   const productsList = useRef();
+  const details = useRef();
 
   let products = JSON.parse(localStorage.getItem("products")) || [];
   let fullPrice = parseInt(localStorage.getItem("fullPrice")) || 0;
+
+  useEffect(() => {
+    if (localStorage.getItem("page") === 'cart') {
+      document.querySelector(".mainPage").style.display = 'none';
+      document.querySelector(".products-page").style.display = 'none';
+      document.querySelector(".cart").style.display = 'block';
+
+      if (fullPrice > 0) {
+        document.querySelector(".accessed").style.display = 'flex';
+        document.querySelector(".alerts").style.display = 'none';
+      } else {
+        document.querySelector(".alerts").style.display = 'flex';
+        document.querySelector(".accessed").style.display = 'none';
+      }
+    } else if (localStorage.getItem("page") === 'details') {
+      details.current.lastElementChild.style.backgroundColor = '#e11f1d';
+      details.current.lastElementChild.style.color = '#fff';
+      document.querySelector(".details").style.display = 'flex';
+    } else {
+      details.current.lastElementChild.style.backgroundColor = 'transparent';
+      details.current.lastElementChild.style.color = '#000';
+    }
+  });
 
   for (let i = 0; i < products.length; i++) {
     for (let j = 0; j < products.length - 1; j++) {
@@ -59,6 +84,7 @@ const Cart = componentProps => {
 
   const crossClick = props => {
 
+    localStorage.setItem("page", "cart");
     const pathToBlock = props.nativeEvent.path[2];
     const pathToTitle = props.nativeEvent.path[1].lastChild.lastChild.children[0].innerText.substr(0, props.nativeEvent.path[1].lastChild.children[1].firstChild.childNodes[0].length);
 
@@ -66,7 +92,7 @@ const Cart = componentProps => {
       if (item.title === pathToTitle) {
         pathToBlock.style.display = 'none';
         fullPrice -= parseInt(item.price);
-        document.querySelector(".cart-info").innerText = 'Корзина ₴' + parseFloat(fullPrice).toFixed(2);
+        document.querySelector(".cart-info").innerText = 'Корзина ₴ ' + parseFloat(fullPrice).toFixed(2);
         componentProps.updatePrice(parseInt(fullPrice));
         products.splice(products.indexOf(item), 1);
         document.location.reload();
@@ -83,10 +109,21 @@ const Cart = componentProps => {
   }
 
   const stepClick = eventProps => {
+    console.log(eventProps);
     if (eventProps.nativeEvent.path[1].lastChild.data.toLowerCase() === 'деталі замовлення') {
+      localStorage.setItem("page", "details");
+      document.location.reload();
       if (products.length === null || products.length === undefined || products.length === 0) {
         emptyCartAlert.current.style.display = 'flex';
+      } else {
+        document.querySelector(".accessed").style.display = 'none';
+        document.querySelector(".details").style.display = 'flex';
+        eventProps.target.style.backgroundColor = '#e11f1d';
+        eventProps.target.style.color = '#fff';
       }
+    } else if (eventProps.nativeEvent.path[1].lastChild.data.toLowerCase() === 'кошик') {
+      localStorage.setItem("page", "cart");
+      document.location.reload();
     }
   }
 
@@ -97,14 +134,14 @@ const Cart = componentProps => {
         <div className="cart-wrap__slider order-steps">
           <ul>
             <li className="cart-step step__item">
-              <button className='cart__btn'>
+              <button className='cart__btn' onClick={stepClick}>
                 <span className="step active">1</span>
                 Кошик
               </button>
             </li>
             <div className="item__after-line"></div>
             <li className="checkout step__item">
-              <button className='cart__btn' onClick={stepClick}>
+              <button className='cart__btn' ref={details} onClick={stepClick}>
                 <span className="step">2</span>
                 Деталі замовлення
               </button>
@@ -178,6 +215,8 @@ const Cart = componentProps => {
             <button className="order__btn">перейти до оформлення</button>
           </div>
         </div>
+
+        <Details />
       </div>
     </div>
   )

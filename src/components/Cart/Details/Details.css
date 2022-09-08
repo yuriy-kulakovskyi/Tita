@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Akrobat-Bold";
+  src: url("../assets/font/akrobat/Akrobat-ExtraBold.otf"); }
+@font-face {
+  font-family: "Akrobat-Regular";
+  src: url("../assets/font/akrobat/Akrobat-Regular.otf"); }
+@font-face {
+  font-family: "Akrobat-ExtraLight";
+  src: url("../assets/font/akrobat/Akrobat-ExtraLight.otf"); }
+.details {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  margin-top: 100px; }
+  .details__form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: flex-start; }
+    .details__form .left-form-content {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column; }
+      .details__form .left-form-content .form__title {
+        font-family: "Akrobat-Bold";
+        font-size: 32px;
+        color: #1d1d1b; }
+      .details__form .left-form-content .form__inputs {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        margin-top: 40px;
+        flex-direction: column; }
+        .details__form .left-form-content .form__inputs fieldset {
+          width: 100%;
+          position: relative;
+          border: none; }
+          .details__form .left-form-content .form__inputs fieldset input {
+            width: 100%; }
+          .details__form .left-form-content .form__inputs fieldset label {
+            top: 20px;
+            left: 20px;
+            position: absolute;
+            font-family: "Akrobat-Regular";
+            color: #7a797a; }
+            .details__form .left-form-content .form__inputs fieldset label .redStar {
+              color: #e11f1d; }
+        .details__form .left-form-content .form__inputs .form__input-row {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+        .details__form .left-form-content .form__inputs .form__input {
+          width: 100%;
+          font-family: "Akrobat-Regular";
+          background-color: #f6f6f6;
+          border-radius: 4px 4px 0px 0px;
+          padding: 20px;
+          font-size: 16px;
+          border: none; }
+          .details__form .left-form-content .form__inputs .form__input:focus {
+            outline: none; }
+        .details__form .left-form-content .form__inputs textarea {
+          width: 100%;
+          max-height: 80px;
+          font-family: "Akrobat-Regular";
+          background-color: #f6f6f6;
+          border-radius: 4px 4px 0px 0px;
+          padding: 20px;
+          font-size: 16px;
+          border: none;
+          resize: none; }
+        .details__form .left-form-content .form__inputs .first-row fieldset {
+          width: 45%; }
+        .details__form .left-form-content .form__inputs .second-row fieldset {
+          width: 30%; }
+    .details__form .right-form-content {
+      width: 40%;
+      min-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; }
+      .details__form .right-form-content .content-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-items: flex-start;
+        gap: 30px;
+        flex-direction: column;
+        padding: 30px;
+        background-color: #fff;
+        box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px; }
+        .details__form .right-form-content .content-wrap__title {
+          font-size: 32px;
+          font-family: "Akrobat-Bold"; }
+        .details__form .right-form-content .content-wrap__list {
+          width: 100%;
+          min-height: 80px;
+          overflow: auto; }
+          .details__form .right-form-content .content-wrap__list__item {
+            width: 100%;
+            height: 80px;
+            border-top: 2px solid #e8e8e8;
+            border-bottom: 2px solid #e8e8e8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            margin-top: 5px; }
+            .details__form .right-form-content .content-wrap__list__item__left-part__name {
+              color: #1d1d1b;
+              font-size: 16px;
+              font-family: "Akrobat-ExtraLight"; }
+            .details__form .right-form-content .content-wrap__list__item__left-part__weight {
+              color: #1d1d1b;
+              font-size: 12px;
+              font-family: "Akrobat-ExtraLight"; }
+        .details__form .right-form-content .content-wrap__price {
+          width: 100%;
+          text-align: right;
+          font-size: 16px;
+          font-family: "Akrobat-Regular"; }
+          .details__form .right-form-content .content-wrap__price span {
+            color: #e11f1d;
+            font-size: 32px;
+            font-family: "Akrobat-Bold"; }
+        .details__form .right-form-content .content-wrap .select {
+          width: 100%;
+          position: relative;
+          overflow: hidden; }
+          .details__form .right-form-content .content-wrap .select::after {
+            content: "▼";
+            padding: 12px 8px;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            z-index: 1;
+            text-align: center;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            color: #e11f1d; }
+          .details__form .right-form-content .content-wrap .select__pay-method {
+            width: 100%;
+            font-family: "Akrobat-Regular";
+            background-color: #f6f6f6;
+            border-radius: 4px 4px 0px 0px;
+            padding: 20px;
+            font-size: 16px;
+            border: none;
+            position: relative;
+            appearance: none; }
+            .details__form .right-form-content .content-wrap .select__pay-method:focus {
+              outline: none; }
+        .details__form .right-form-content .content-wrap__confirm-order {
+          min-width: 100%;
+          border: none;
+          background-color: #e11f1d;
+          color: #fff;
+          font-family: "Akrobat-Bold";
+          text-transform: uppercase;
+          border-radius: 49px;
+          padding: 20px;
+          font-size: 20px;
+          cursor: pointer; }
+  @media (max-width: 1110px) {
+    .details__form {
+      gap: 40px;
+      align-items: center;
+      flex-direction: column; }
+      .details__form .right-form-content {
+        width: 90%; }
+      .details__form .left-form-content {
+        width: 90%; } }
+
+/*# sourceMappingURL=Details.css.map */

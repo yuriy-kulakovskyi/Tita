@@ -16,7 +16,8 @@
 
 .cart {
   width: 100%; min-height: 85vh;
-  display: none;
+  display: block;
+  background-color: rgb(254, 254, 254);
 
   .cart-wrap {
     margin: 0 auto;
@@ -157,7 +158,7 @@
 
     .accessed {
       width: 100%;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: flex-end;
       flex-direction: column;

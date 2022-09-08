@@ -24,15 +24,20 @@ const Header = props => {
       setIsActive(true);
       props.pageStyles.current.style.display = 'none';
       props.products.current.style.display = 'flex';
+      localStorage.setItem("page", "roles");
     }
   }
 
-  const toHome = () => document.location.reload();
+  const toHome = () => {
+    localStorage.setItem("page", "home");
+    document.location.reload();
+  };
 
   const toCartSection = () => {
     document.querySelector(".mainPage").style.display = 'none';
     document.querySelector(".products-page").style.display = 'none';
     document.querySelector(".cart").style.display = 'block';
+    localStorage.setItem("page", "cart");
     setIsActive(false);
 
     let cartCheckVal = cartVal.current.innerText.substr(10);
