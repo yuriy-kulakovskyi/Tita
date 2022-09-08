@@ -14,6 +14,9 @@ import Products from './components/Goods/Products';
 import Cart from './components/Cart/Cart';
 import CartButton from './components/Cart-btn/CartBtn';
 
+if (localStorage.getItem("page") === null || localStorage.getItem("page") === undefined) {
+  localStorage.setItem("page", "home");
+}
 
 function App () {
   const pageStyles = React.createRef();
